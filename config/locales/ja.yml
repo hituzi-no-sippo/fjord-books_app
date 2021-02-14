@@ -217,6 +217,7 @@ ja:
       title_edit: "%{name}の編集"
       logged_in: "%{email}でログイン中です"
       resource_setting: "%{name}設定"
+      resource_list: "%{name}一覧"
     pagination:
       first: '最初'
       last: '最後'

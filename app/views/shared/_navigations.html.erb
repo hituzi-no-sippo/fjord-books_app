@@ -1,5 +1,7 @@
 <p>
   <%= t('views.common.logged_in', email: current_user.email) %>
   <%= link_to_unless_current t('views.common.resource_setting', name: User.model_name.human), edit_user_registration_path %> |
+  <%= link_to_unless_current t('views.common.resource_list', name: Book.model_name.human), books_path %> |
+  <%= link_to_unless_current t('views.common.resource_list', name: User.model_name.human), users_path %> |
   <%= link_to_unless_current t('views.pagination.logout'), destroy_user_session_path, method: :delete %>
 </p>
