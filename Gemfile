@@ -62,3 +62,5 @@ gem 'carrierwave'
 gem 'kaminari'
 
 gem 'devise', '~> 4.7'
+
+gem 'devise-i18n', '~> 1.9'

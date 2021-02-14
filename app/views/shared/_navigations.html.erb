@@ -1,5 +1,5 @@
 <p>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to_unless_current  'User setting', edit_user_registration_path %> |
-  <%= link_to_unless_current  "Logout", destroy_user_session_path, method: :delete %>
+  <%= t('views.common.logged_in', email: current_user.email) %>
+  <%= link_to_unless_current t('views.common.resource_setting', name: User.model_name.human), edit_user_registration_path %> |
+  <%= link_to_unless_current t('views.pagination.logout'), destroy_user_session_path, method: :delete %>
 </p>
