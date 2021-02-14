@@ -1,0 +1,5 @@
+<p>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to_unless_current  'User setting', edit_user_registration_path %> |
+  <%= link_to_unless_current  "Logout", destroy_user_session_path, method: :delete %>
+</p>
