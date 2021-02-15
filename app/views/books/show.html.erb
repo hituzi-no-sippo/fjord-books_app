@@ -20,5 +20,5 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
-<%= link_to t(:edit, scope: [:navigations]), edit_book_path(@book) %> |
-<%= link_to t(:back, scope: [:navigations]), books_path %>
+<%= link_to t('navigations.edit'), edit_book_path(@book) %> |
+<%= link_to t('navigations.back'), books_path %>
