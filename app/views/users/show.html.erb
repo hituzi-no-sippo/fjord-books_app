@@ -5,4 +5,19 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong><%= UserProfile.human_attribute_name(:postal_code) %>:</strong>
+  <%= @user.profile&.postal_code %>
+</p>
+
+<p>
+  <strong><%= UserProfile.human_attribute_name(:address) %>:</strong>
+  <%= @user.profile&.address %>
+</p>
+
+<p>
+  <strong><%= UserProfile.human_attribute_name(:bio) %>:</strong>
+  <%= @user.profile&.bio %>
+</p>
+
 <%= link_to t('views.common.back'), users_path %>

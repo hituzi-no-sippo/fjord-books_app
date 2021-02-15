@@ -4,6 +4,9 @@
   <thead>
     <tr>
       <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= UserProfile.human_attribute_name(:postal_code) %></th>
+      <th><%= UserProfile.human_attribute_name(:address) %></th>
+      <th><%= UserProfile.human_attribute_name(:bio) %></th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -12,6 +15,9 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
+        <td><%= user.profile&.postal_code %></td>
+        <td><%= user.profile&.address %></td>
+        <td><%= user.profile&.bio %></td>
         <td><%= link_to t('views.common.show'), user %></td>
       </tr>
     <% end %>
