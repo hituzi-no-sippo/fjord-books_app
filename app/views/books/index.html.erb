@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th><%= t(:title   , scope: [:activerecord, :attributes, :book]) %></th>
-      <th><%= t(:memo    , scope: [:activerecord, :attributes, :book]) %></th>
-      <th><%= t(:author  , scope: [:activerecord, :attributes, :book]) %></th>
-      <th><%= t(:picture , scope: [:activerecord, :attributes, :book]) %></th>
+      <th><%= Book.human_attribute_name(:title) %></th>
+      <th><%= Book.human_attribute_name(:memo) %></th>
+      <th><%= Book.human_attribute_name(:author) %></th>
+      <th><%= Book.human_attribute_name(:picture) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
