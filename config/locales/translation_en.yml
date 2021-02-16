@@ -1,0 +1,35 @@
+en:
+  activerecord:
+    models:
+      book: Book  #g
+
+    attributes:
+      book:
+        author: Author  #g
+        memo: Memo  #g
+        picture: Picture  #g
+        title: Title  #g
+
+  service_name: BooksApp
+
+  navigations:
+    show: show
+    edit:   edit
+    destory: destory
+    new_book: new book
+    back: back
+
+  page_titles:
+    books: Books
+    editing_books: Editing Book
+    new_book: New Book
+
+  messages:
+    confirm: Are you sure?
+
+    notices:
+      book:
+        successfully:
+          created: Book was successfully created.
+          destroyed: Book was successfully destroyed.
+          updated: Book was successfully updated.

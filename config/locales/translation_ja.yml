@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+    models:
+      book: 本  #g
+
+    attributes:
+      book:
+        author: 著者  #g
+        memo: メモ  #g
+        picture: 画像  #g
+        title: 題名  #g
+
+  service_name: BooksApp
+
+  navigations:
+    show: 詳細
+    edit:   編集
+    destory: 削除
+    new_book: 新規作成
+    back: 戻る
+
+  page_titles:
+    books: 本一覧
+    editing_books: 本の編集
+    new_book: 本の追加
+
+  messages:
+    confirm: 本当に実行しますか?
+
+    notices:
+      book:
+        successfully:
+          created: 本の作成に成功しました。
+          destroyed: 本の削除に成功しました。
+          updated: 本の更新に成功しました。
