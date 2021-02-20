@@ -3,6 +3,7 @@ ja:
     models:
       book: 本  #g
       user: ユーザ  #g
+      user_profile: ユーザープロファイル  #g
 
     attributes:
       book:
@@ -17,3 +18,10 @@ ja:
         remember_created_at: ログイン記憶時刻  #g
         reset_password_sent_at: パスワードリセット送信時刻  #g
         reset_password_token: パスワードリセット用トークン  #g
+        profile: :activerecord.models.profile  #g
+
+      user_profile:
+        address: 住所  #g
+        bio: 自己紹介  #g
+        postal_code: 郵便番号  #g
+        user: :activerecord.models.user  #g
