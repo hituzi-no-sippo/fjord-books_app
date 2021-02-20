@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('views.common.title_edit', name: UserProfile.model_name.human) %></h1>
+
+<%= render 'form', profile: @profile %>
+
+<%= link_to t('views.common.back'), edit_user_registration_path %>
