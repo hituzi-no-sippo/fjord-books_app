@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_214302) do
+ActiveRecord::Schema.define(version: 2021_02_22_222156) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_214302) do
     t.string "picture"
   end
 
-  create_table "user_profiles", primary_key: "user", force: :cascade do |t|
+  create_table "user_profiles", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "postal_code", null: false
     t.string "address", null: false

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UserProfile < ApplicationRecord
+  self.primary_key = :user_id
   belongs_to :user
 
   validates :user_id, uniqueness: true
