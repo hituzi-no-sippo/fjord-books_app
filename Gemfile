@@ -65,3 +65,5 @@ gem 'kaminari'
 
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-github', '~> 1.4.0'
+
+gem 'dotenv-rails', '~> 2.7'
