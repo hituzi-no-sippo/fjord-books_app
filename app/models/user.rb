@@ -17,8 +17,4 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
-
-  def sing_in_with_provider?
-    !provider.empty?
-  end
 end
