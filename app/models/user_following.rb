@@ -6,4 +6,10 @@ class UserFollowing < ApplicationRecord
 
   validates :following, presence: true, uniqueness: { scope: :follower }
   validates :follower,  presence: true
+
+  validate :another_user
+
+  def another_user
+    errors.add(:following, 'はフォロワーと違うユーザにしてください') if following_id == follower_id
+  end
 end
