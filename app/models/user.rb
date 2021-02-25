@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :following_relationships, class_name: 'UserFollowing', foreign_key: 'follower_id', inverse_of: 'follower', dependent: :destroy
-  has_many :followings, through: :following_relationships, source: :following
-  has_many :follower_relationships, class_name: 'UserFollowing', foreign_key: 'following_id', inverse_of: 'following', dependent: :destroy
-  has_many :followers, through: :follower_relationships, source: :follower
+  has_many :following_relationships, -> { order('id') }, class_name: 'UserFollowing', foreign_key: 'follower_id', inverse_of: 'follower', dependent: :destroy
+  has_many :followings, -> { order('user_followings.id') }, through: :following_relationships, source: :following
+  has_many :follower_relationships, -> { order('id') }, class_name: 'UserFollowing', foreign_key: 'following_id', inverse_of: 'following', dependent: :destroy
+  has_many :followers, -> { order('user_followings.id') }, through: :follower_relationships, source: :follower
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
