@@ -241,4 +241,6 @@ ja:
         title: "アカウント編集"
   followings:
     follow: 'フォロー'
+    unfollow: 'フォロー解除'
     already_followed: 'フォロー済みです'
+    not_following: 'フォローしていません'

@@ -21,4 +21,8 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
+
+  def followings?(id)
+    following_relationships.exists?(following_id: id)
+  end
 end
