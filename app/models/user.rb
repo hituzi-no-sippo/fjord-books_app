@@ -25,4 +25,12 @@ class User < ApplicationRecord
   def followings?(id)
     following_relationships.exists?(following_id: id)
   end
+
+  def following_count
+    following_relationships.count
+  end
+
+  def follower_count
+    follower_relationships.count
+  end
 end

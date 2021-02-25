@@ -242,5 +242,7 @@ ja:
   followings:
     follow: 'フォロー'
     unfollow: 'フォロー解除'
+    followings: 'フォロー中'
+    followers: 'フォロワー'
     already_followed: 'フォロー済みです'
     not_following: 'フォローしていません'
