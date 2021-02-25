@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: %i(index show) do
     member do
       resource :followings, only: %i(show create destroy), as: 'user_followings', controller: 'users/followings'
+      resource :followers,  only: %i(show),                as: 'user_followers',  controller: 'users/followers'
     end
   end
 end

@@ -247,3 +247,4 @@ ja:
     already_followed: 'フォロー済みです'
     not_following: 'フォローしていません'
     not_followings: 'フォロー中のユーザはいません'
+    no_followers: 'フォロワーはいません'

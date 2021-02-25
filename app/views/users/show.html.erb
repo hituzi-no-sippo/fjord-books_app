@@ -40,7 +40,7 @@
 
 <p>
   <strong><%= t('followings.followers') %>:</strong>
-  <%= @user.follower_count %>
+  <%= link_to @user.follower_count, user_followers_path %>
 </p>
 
 <% if current_user == @user %>
