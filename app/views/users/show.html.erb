@@ -35,7 +35,7 @@
 
 <p>
   <strong><%= t('followings.followings') %>:</strong>
-  <%= @user.following_count %>
+  <%= link_to @user.following_count, user_followings_path %>
 </p>
 
 <p>

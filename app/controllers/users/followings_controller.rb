@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Users::FollowingsController < ApplicationController
+  def show
+    @users = User.find(params[:id]).followings.page(params[:page])
+  end
+
   def create
     following = current_user.following_relationships.build(following_id: params[:id])
 
