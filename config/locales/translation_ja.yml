@@ -2,6 +2,8 @@ ja:
   activerecord:
     models:
       book: 本  #g
+      user: ユーザ  #g
+      user_profile: ユーザープロファイル  #g
 
     attributes:
       book:
@@ -9,3 +11,17 @@ ja:
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
+
+      user:
+        email: Eメール  #g
+        encrypted_password: 暗号化パスワード  #g
+        remember_created_at: ログイン記憶時刻  #g
+        reset_password_sent_at: パスワードリセット送信時刻  #g
+        reset_password_token: パスワードリセット用トークン  #g
+        profile: :activerecord.models.profile  #g
+
+      user_profile:
+        address: 住所  #g
+        bio: 自己紹介  #g
+        postal_code: 郵便番号  #g
+        user: :activerecord.models.user  #g
