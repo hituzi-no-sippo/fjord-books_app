@@ -20,5 +20,10 @@
   <%= l @report.updated_at %>
 </p>
 
+<p>
+  <strong><%= Report.human_attribute_name(:author) %>:</strong>
+  <%= @report.author.name.empty? ? @report.author.email : @report.author.name %>
+</p>
+
 <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <%= link_to t('views.common.back'), reports_path %>

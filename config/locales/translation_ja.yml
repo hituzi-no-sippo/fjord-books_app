@@ -35,6 +35,7 @@ ja:
         reset_password_sent_at: パスワードリセット送信時刻  #g
         reset_password_token: パスワードリセット用トークン  #g
         uid: Uid  #g
+        reports: 日報
 
       active_storage/attachment:
         blob: :activerecord.models.blob  #g
@@ -70,3 +71,4 @@ ja:
         title: 題名  #g
         created_at: 投稿日時
         updated_at: 更新日時
+        author: 著者
