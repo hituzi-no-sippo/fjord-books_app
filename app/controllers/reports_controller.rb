@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
+  before_action :author?, only: %i[update destroy]
 
   def index
     @reports = Report.order(:id).page(params[:page])
@@ -43,6 +44,10 @@ class ReportsController < ApplicationController
 
   def set_report
     @report = Report.find(params[:id])
+  end
+
+  def author?
+    redirect_to @report, alert: t('.permission.error') unless @report.author?(current_user.id)
   end
 
   def report_params

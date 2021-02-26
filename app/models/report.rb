@@ -5,4 +5,8 @@ class Report < ApplicationRecord
 
   validates :title, presence:	true
   validates :body,  presence:	true
+
+  def author?(user_id)
+    author.id == user_id
+  end
 end

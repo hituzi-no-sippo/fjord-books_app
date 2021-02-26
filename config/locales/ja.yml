@@ -240,6 +240,9 @@ ja:
     followers:
       index:
         title: フォロワー
+  reports:
+    permission:
+      error: '許可されていない操作です。'
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

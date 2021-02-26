@@ -25,5 +25,7 @@
   <%= @report.author.name.empty? ? @report.author.email : @report.author.name %>
 </p>
 
-<%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<% if @report.author?(current_user.id) %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+<% end %>
 <%= link_to t('views.common.back'), reports_path %>
