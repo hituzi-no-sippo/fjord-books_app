@@ -243,6 +243,9 @@ ja:
   reports:
     permission:
       error: '許可されていない操作です。'
+  comments:
+    index:
+      non_comments: 'コメントはありません。'
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
