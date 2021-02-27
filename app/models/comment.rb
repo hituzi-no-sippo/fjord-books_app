@@ -2,6 +2,7 @@
 
 class Comment < ApplicationRecord
   belongs_to :user
+  belongs_to :attachable, polymorphic: true
 
   validates :body, presence: true
 end
