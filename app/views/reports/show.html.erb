@@ -25,6 +25,10 @@
   <%= @report.author.name.empty? ? @report.author.email : @report.author.name %>
 </p>
 
+<h2><%= Comment.model_name.human %></h2>
+
+<%= render 'comments/add_form', url: report_comments_path(@report) %>
+
 <% if @report.author?(current_user.id) %>
   <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>

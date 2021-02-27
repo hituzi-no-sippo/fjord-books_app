@@ -8,6 +8,7 @@ ja:
       relationship: 関係  #g
       report: 日報  #g
       user: ユーザ  #g
+      comment: コメント  #g
 
     attributes:
       book:
