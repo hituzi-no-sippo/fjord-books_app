@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_comment, only: %i[destroy]
-  before_action :set_attach_resource, only: %i[create destroy]
-  before_action :comment_user?, only: %i[destroy]
+  before_action :set_comment, only: %i[edit update destroy]
+  before_action :set_attach_resource, only: %i[edit update create destroy]
+  before_action :comment_user?, only: %i[update destroy]
 
   def create
     comment = Comment.new(comment_params.merge(
@@ -18,6 +18,16 @@ class CommentsController < ApplicationController
         { alert:  t('controllers.common.alert_create_fail', name: Comment.model_name.human) }
       end
     )
+  end
+
+  def edit; end
+
+  def update
+    if @comment.update(comment_params)
+      redirect_to polymorphic_path(@attach_resouce), notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+    else
+      render :edit
+    end
   end
 
   def destroy
