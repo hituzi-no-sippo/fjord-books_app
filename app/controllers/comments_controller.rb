@@ -43,8 +43,8 @@ class CommentsController < ApplicationController
   end
 
   def set_attach_resource
-    model_name = request.path.split('/')[1].classify
-    @attach_resource = model_name.constantize.find(params["#{model_name.downcase}_id".to_sym])
+    resource, id = request.path.split('/')[1, 2]
+    @attach_resource = resource.classify.constantize.find(id)
   end
 
   def comment_user?
