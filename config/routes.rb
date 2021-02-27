@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   concern :commentable do
-    resources :comments, only: %i[create]
+    resources :comments, only: %i[create destroy]
   end
 
   resources :reports, concerns: :commentable

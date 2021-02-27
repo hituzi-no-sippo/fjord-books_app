@@ -47,7 +47,7 @@ class ReportsController < ApplicationController
   end
 
   def author?
-    redirect_to @report, alert: t('.permission.error') unless @report.author?(current_user.id)
+    redirect_to @report, alert: t('controllers.common.alert_not_allow') unless @report.author?(current_user.id)
   end
 
   def report_params

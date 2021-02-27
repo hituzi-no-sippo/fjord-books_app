@@ -7,6 +7,7 @@
         <th><%= Comment.model_name.human %></th>
         <th><%= User.model_name.human %></th>
         <th><%= Report.human_attribute_name(:created_at) %></th>
+        <th colspan="1"></th>
       </tr>
     </thead>
 
@@ -16,6 +17,7 @@
           <td><%= comment.body %></td>
           <td><%= comment.user.name.empty? ? comment.user.email : comment.user.name %></td>
           <td><%= comment.created_at %></td>
+          <td><%= link_to t('views.common.destroy'), polymorphic_path([attach_resouce, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } if comment.comment_user?(current_user.id) %></td>
         </tr>
       <% end %>
     </tbody>
