@@ -7,11 +7,11 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.new(comment_params.merge(
-                            { attachable: @attach_resouce, user: current_user }
+                            { attachable: @attach_resource, user: current_user }
                           ))
 
     redirect_to(
-      polymorphic_path(@attach_resouce),
+      polymorphic_path(@attach_resource),
       if comment.save
         { notice: t('controllers.common.notice_create',     name: Comment.model_name.human) }
       else
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to polymorphic_path(@attach_resouce), notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+      redirect_to polymorphic_path(@attach_resource), notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
 
-    redirect_to polymorphic_path(@attach_resouce), notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    redirect_to polymorphic_path(@attach_resource), notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
@@ -44,11 +44,11 @@ class CommentsController < ApplicationController
 
   def set_attach_resource
     model_name = request.path.split('/')[1].classify
-    @attach_resouce = model_name.constantize.find(params["#{model_name.downcase}_id".to_sym])
+    @attach_resource = model_name.constantize.find(params["#{model_name.downcase}_id".to_sym])
   end
 
   def comment_user?
-    redirect_to polymorphic_path(@attach_resouce), alert: t('controllers.common.alert_not_allow') unless @comment.comment_user?(current_user.id)
+    redirect_to polymorphic_path(@attach_resource), alert: t('controllers.common.alert_not_allow') unless @comment.comment_user?(current_user.id)
   end
 
   def comment_params

@@ -1,5 +1,5 @@
 <h1><%= t('views.common.title_edit', name: Report.model_name.human) %></h1>
 
-<%= render 'form', comment: @comment, url: polymorphic_path([@attach_resouce, @comment]) %>
+<%= render 'form', comment: @comment, url: polymorphic_path([@attach_resource, @comment]) %>
 
-<%= link_to t('views.common.back'), polymorphic_path(@attach_resouce) %>
+<%= link_to t('views.common.back'), polymorphic_path(@attach_resource) %>
