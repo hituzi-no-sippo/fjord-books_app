@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_one_attached :icon
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[github]
 
   validates :uid, uniqueness: { scope: :provider }, if: -> { uid.present? }
+  validates :icon, content_type: ['image/png', 'image/jpeg', 'image/gif']
 
   def self.from_omniauth(auth)
     find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
