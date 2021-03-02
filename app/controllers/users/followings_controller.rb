@@ -2,7 +2,7 @@
 
 class Users::FollowingsController < ApplicationController
   def show
-    @users = User.find(params[:id]).followings.page(params[:page])
+    @users = User.find(params[:id]).followings.order('user_followings.id').page(params[:page])
   end
 
   def create
