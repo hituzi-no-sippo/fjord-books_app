@@ -9,15 +9,13 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params.merge(
                             { attachable: @attach_resource, user: current_user }
                           ))
+    message = if comment.save
+                { notice: t('controllers.common.notice_create',    name: Comment.model_name.human) }
+              else
+                { alert: t('controllers.common.alert_create_fail', name: Comment.model_name.human) }
+              end
 
-    redirect_to(
-      polymorphic_path(@attach_resource),
-      if comment.save
-        { notice: t('controllers.common.notice_create',     name: Comment.model_name.human) }
-      else
-        { alert:  t('controllers.common.alert_create_fail', name: Comment.model_name.human) }
-      end
-    )
+    redirect_to(polymorphic_path(@attach_resource), message)
   end
 
   def edit; end
