@@ -46,7 +46,7 @@
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% else %>
-  <%= render 'follow_button', follows: !current_user.followings?(@user.id) %>
+  <%= render 'follow_button', follows: !current_user.following?(@user.id) %>
 <% end %>
 
 <%= link_to t('views.common.back'), users_path %>

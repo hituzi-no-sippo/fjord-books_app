@@ -22,7 +22,7 @@ class User < ApplicationRecord
     end
   end
 
-  def followings?(id)
+  def following?(id)
     following_relationships.exists?(following_id: id)
   end
 
