@@ -6,7 +6,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   include Warden::Test::Helpers
 
   setup do
-    @book = books(:one)
+    @book = books(:ruby_super_introduction)
 
     login_as(users(:alice))
   end
