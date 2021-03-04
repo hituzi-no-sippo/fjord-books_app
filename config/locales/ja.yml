@@ -248,3 +248,4 @@ ja:
     not_following: 'フォローしていません'
     not_followings: 'フォロー中のユーザはいません'
     no_followers: 'フォロワーはいません'
+    self_follow: 'はフォロワーと違うユーザにしてください。自分自身をフォローできません。'
