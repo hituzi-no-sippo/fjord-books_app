@@ -15,7 +15,7 @@
       <tr>
         <td><%= report.title %></td>
         <td><%= report.body %></td>
-        <td><%= report.author.name.empty? ? report.author.email : report.author.name %></td>
+        <td><%= report.author.name_or_email %></td>
         <td><%= link_to t('views.common.show'), report %></td>
 
         <% is_author = report.author?(current_user.id) %>

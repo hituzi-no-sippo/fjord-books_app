@@ -15,7 +15,7 @@
       <% attach_resource.comments.each do |comment| %>
         <tr>
           <td><%= comment.body %></td>
-          <td><%= comment.user.name.empty? ? comment.user.email : comment.user.name %></td>
+          <td><%= comment.user.name_or_email %></td>
           <td><%= comment.created_at %></td>
 
           <% is_comment_user = comment.comment_user?(current_user.id) %>
