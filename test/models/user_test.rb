@@ -16,6 +16,14 @@ class UsersTest < ActiveSupport::TestCase
     assert one.following?(two)
   end
 
+  test '#followed_by?' do
+    one, two = make_two_user
+
+    assert_not two.followed_by?(one)
+    one.follow(two)
+    assert two.followed_by?(one)
+  end
+
   test '#follow' do
     one, two = make_two_user
 
