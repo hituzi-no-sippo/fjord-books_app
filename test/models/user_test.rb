@@ -16,6 +16,16 @@ class UsersTest < ActiveSupport::TestCase
     assert one.following?(two)
   end
 
+  test '#unfollow' do
+    one, two = make_two_user
+
+    one.follow(two)
+
+    assert one.following?(two)
+    one.unfollow(two)
+    assert_not one.following?(two)
+  end
+
   test '#name_or_email' do
     email = 'alice@example.com'
     user = User.new(email: email)
