@@ -1,0 +1,28 @@
+<% if attach_resource.comments.empty? %>
+  <h3><%= t('comments.index.non_comments') %></h3>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= Comment.model_name.human %></th>
+        <th><%= User.model_name.human %></th>
+        <th><%= Report.human_attribute_name(:created_at) %></th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% attach_resource.comments.each do |comment| %>
+        <tr>
+          <td><%= comment.body %></td>
+          <td><%= comment.user.name_or_email %></td>
+          <td><%= l comment.created_at %></td>
+
+          <% is_comment_user = comment.comment_user?(current_user.id) %>
+          <td><%= link_to t('views.common.edit'),    edit_polymorphic_path([attach_resource, comment]) if is_comment_user %></td>
+          <td><%= link_to t('views.common.destroy'), polymorphic_path([attach_resource, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } if is_comment_user %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
