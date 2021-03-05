@@ -8,6 +8,14 @@ class UsersTest < ActiveSupport::TestCase
      User.create!(email: 'two@example.com', password: '123456')]
   end
 
+  test '#following?' do
+    one, two = make_two_user
+
+    assert_not one.following?(two)
+    one.follow(two)
+    assert one.following?(two)
+  end
+
   test '#follow' do
     one, two = make_two_user
 
