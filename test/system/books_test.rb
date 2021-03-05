@@ -5,6 +5,7 @@ require 'application_system_test_case'
 class BooksTest < ApplicationSystemTestCase
   setup do
     @book = books(:one)
+    login
   end
 
   test 'visiting the index' do
