@@ -27,7 +27,7 @@ class BooksTest < ApplicationSystemTestCase
 
   test 'updating a Book' do
     visit books_url
-    click_on I18n.t('views.common.edit'), match: :first
+    click_on I18n.t('views.common.edit'), exact: true, match: :first
 
     fill_in Book.human_attribute_name(:memo), with: @book.memo
     fill_in Book.human_attribute_name(:title), with: @book.title
