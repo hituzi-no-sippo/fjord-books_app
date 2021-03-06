@@ -33,7 +33,20 @@
   <% end %>
 </p>
 
+<p>
+  <strong><%= t('followings.followings') %>:</strong>
+  <%= link_to @user.following_count, user_followings_path %>
+</p>
+
+<p>
+  <strong><%= t('followings.followers') %>:</strong>
+  <%= link_to @user.follower_count, user_followers_path %>
+</p>
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
+<% else %>
+  <%= render 'follow_button', follows: !current_user.following?(@user.id) %>
 <% end %>
+
 <%= link_to t('views.common.back'), users_path %>

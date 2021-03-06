@@ -1,0 +1,1 @@
+<%= button_to t("followings.#{follows ? 'follow' : 'unfollow'}"), user_followings_path, controller: "users/followings", method: (follows ? :post : :delete) %>

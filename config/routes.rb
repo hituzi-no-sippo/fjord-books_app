@@ -3,5 +3,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: "users/registrations" }
   root to: 'books#index'
   resources :books
-  resources :users, only: %i(index show)
+  resources :users, only: %i(index show) do
+    scope module: :users do
+      member do
+        resource :followings, only: %i(show create destroy), as: 'user_followings'
+        resource :followers,  only: %i(show),                as: 'user_followers'
+      end
+    end
+  end
 end

@@ -1,0 +1,7 @@
+<h1><%= t('followings.followings') + User.model_name.human %></h1>
+
+<% if @users.empty? %>
+  <%= t('followings.not_followings') %>
+<% else %>
+  <%= render 'users/list', users: @users %>
+<% end %>

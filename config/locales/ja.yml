@@ -229,6 +229,7 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+      notice_success: "%{event}に成功しました。"
   layouts:
     application:
       menu: メニュー
@@ -238,3 +239,13 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
+  followings:
+    follow: 'フォロー'
+    unfollow: 'フォロー解除'
+    followings: 'フォロー中'
+    followers: 'フォロワー'
+    already_followed: 'フォロー済みです'
+    not_following: 'フォローしていません'
+    not_followings: 'フォロー中のユーザはいません'
+    no_followers: 'フォロワーはいません'
+    self_follow: 'はフォロワーと違うユーザにしてください。自分自身をフォローできません。'
