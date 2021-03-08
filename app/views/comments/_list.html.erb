@@ -12,7 +12,7 @@
     </thead>
 
     <tbody>
-      <% attach_resource.comments.each do |comment| %>
+      <% attach_resource.comments.order(:id).each do |comment| %>
         <tr>
           <td><%= comment.body %></td>
           <td><%= comment.user.name_or_email %></td>
