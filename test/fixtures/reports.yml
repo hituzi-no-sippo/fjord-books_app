@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  content: MyText
+wonderland:
+  user: alice
+  title: Alice's Adventures in Wonderland
+  content: Charles Lutwidge Dodgson
 
-two:
-  user: two
-  title: MyString
-  content: MyText
+tcp:
+  user: bob
+  title: TCP/IP
+  content: Internet protocol suite
